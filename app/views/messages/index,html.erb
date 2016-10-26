@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    コーディネート一覧
+  </div>
+    
+  <div class="panel-body">
+    <% @messages.each do |message| %>
+      <span class="label label-info"><%= message.name %></span>
+      <%= message.body %>
+      <br>
+    <% end %>
+  </div>
+</div>
+
+<%= form_for(@message) do |f| %>
+  写真:
+  <%= f.text_field :avator %>
+
+  内容:
+  <%= f.text_field :content %>
+  <%= f.submit class: "btn btn-sm btn-primary" %>
+<% end %>
