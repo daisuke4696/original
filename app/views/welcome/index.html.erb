@@ -1,2 +1,44 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>deviseテスト</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <header class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <%= link_to 'deviseテスト', root_path, class: 'navbar-brand' %>
+      </div>
+      <div class="navbar-text pull-right">
+        <% if user_signed_in? %>
+          Logged in as <strong><%= current_user.name %></strong>.
+          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+          <%= link_to 'Sign out', '/users/sign_out', :method => :delete, :class => 'navbar-link'  %>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %> |
+          <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) , :class => 'navbar-link' %> |
+          <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) , :class => 'navbar-link' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-success"><%= alert %></p>
+  <% end %>
+  <%= yield %>
+</div>
+</body>
+</html>
