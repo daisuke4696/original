@@ -27,6 +27,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'devise'
+gem 'omniauth', '~> 1.2.1'
+gem 'omniauth-twitter', '~> 1.0.1'
+gem 'omniauth-facebook', '~> 1.4.0'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
