@@ -31,6 +31,7 @@ gem 'devise'
 gem 'omniauth', '~> 1.2.1'
 gem 'omniauth-twitter', '~> 1.0.1'
 gem 'omniauth-facebook', '~> 1.4.0'
+gem 'bootstrap-sass'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
