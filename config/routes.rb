@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  
   devise_for :users, :controllers => {
     :sessions      => "users/sessions",
     :registrations => "users/registrations",
@@ -7,9 +7,6 @@ Rails.application.routes.draw do
     :omniauth_callbacks => "users/omniauth_callbacks" 
   }
 
-  devise_for :users, :controllers => {
- :registrations => 'users/registrations'
-}
 
 devise_scope :user do 
  post 'users/sign_up/confirm' => 'users/registrations#confirm'
@@ -78,4 +75,5 @@ devise_scope :user do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+ end
 end

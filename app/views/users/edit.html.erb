@@ -1,0 +1,16 @@
+<h2>プロフィールを編集する</h2>
+
+<%= form_for(current_user, html: { method: :patch }) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit '更新する' %>
+  </div>
+<% end %>
+
+<h3>退会する</h3>
+
+<%= button_to "退会する", user_path( current_user ), data: { confirm: "本当に退会してよろしいですか？?" }, method: :delete %>
