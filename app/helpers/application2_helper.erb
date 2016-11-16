@@ -1,0 +1,18 @@
+module ApplicationHelper
+  def document_title
+    if @document_title.present?
+      h(@document_title) + ' - Plaka'
+    else
+      'Plaka'
+    end
+  end
+
+  def copyright
+    text = 'Copyright &;copy; 2016'
+    if Date.today.year > 2016
+      text << '-' + Date.today.year.to_s
+    end
+    text << ' Oiax Inc., All Rights Reserved.'
+    text
+  end
+end
